@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Icono provisional. PENDIENTE: confirmar con la floristería — sustituir por su logo -->
+  <rect width="32" height="32" rx="8" fill="#fdfaf4"/>
+  <path d="M16 29V12" stroke="#3f5e4a" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M16 18c-6-1-9-5-9-10 5 0 9 3 9 10z" fill="#3f5e4a" opacity=".55"/>
+  <path d="M16 14c5-1 8-4 8-9-5 0-8 3-8 9z" fill="#3f5e4a"/>
+</svg>

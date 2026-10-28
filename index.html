@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ============================================================
+       SEO básico (se amplía en la fase 3: Open Graph y schema.org)
+       ============================================================ -->
+  <title>Nalagreen · Floristería en Palafolls | Flores, ramos y bodas</title>
+  <meta name="description" content="Floristería Nalagreen en Palafolls (Maresme). Ramos de flores frescas y preservadas, decoración floral de bodas, envíos de flores y encargos para empresas. Pide por WhatsApp.">
+  <meta name="theme-color" content="#3f5e4a">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías: Cormorant Garamond (títulos) + Nunito Sans (texto).
+       Se cargan desde Google Fonts. Si se prefiere no enviar datos a Google,
+       pueden descargarse y servirse desde la carpeta /fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Enlace para saltar al contenido (accesibilidad con teclado) -->
+  <a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+  <!-- ============================================================
+       CABECERA Y MENÚ
+       ============================================================ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand" aria-label="Nalagreen, inicio">
+        <!-- PENDIENTE: confirmar con la floristería — sustituir por el logo real (img/logo.svg) -->
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 29c0-9 0-13 0-17" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <path d="M16 18c-6-1-9-5-9-10 5 0 9 3 9 10z" fill="currentColor" opacity=".55"/>
+          <path d="M16 14c5-1 8-4 8-9-5 0-8 3-8 9z" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">Nalagreen</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Menú principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden" data-i18n="nav.menu">Menú</span>
+        </button>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+          <li><a href="#galeria" data-i18n="nav.gallery">Galería</a></li>
+          <li><a href="#fechas" data-i18n="nav.dates">Fechas especiales</a></li>
+          <li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li>
+          <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+          <li class="nav-cta"><a href="#reservar" class="btn btn-primary btn-sm" data-i18n="nav.book">Encargar</a></li>
+        </ul>
+      </nav>
+
+      <!-- Selector de idioma -->
+      <div class="lang-switch" role="group" aria-label="Idioma / Idioma">
+        <button type="button" data-lang="ca" lang="ca" aria-pressed="false">CA</button>
+        <button type="button" data-lang="es" lang="es" aria-pressed="true">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. INICIO (HERO)
+         ============================================================ -->
+    <section class="hero" id="inicio">
+      <!-- PENDIENTE: confirmar con la floristería — foto principal grande (img/hero.jpg, mín. 1920 px de ancho).
+           Para usarla: en css/styles.css, en .hero-media, cambiar el fondo por url('../img/hero.jpg') -->
+      <div class="hero-media placeholder" role="img" aria-label="Foto principal de la floristería (pendiente)">
+        <span class="placeholder-label" data-i18n="ph.hero">Foto principal pendiente</span>
+      </div>
+
+      <div class="container hero-content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Floristería en Palafolls · Maresme</p>
+        <h1 class="hero-title" data-i18n-html="hero.title">Flores con alma,<br>hechas a tu medida</h1>
+        <p class="hero-text" data-i18n="hero.text">Ramos frescos y preservados, bodas y detalles para cada ocasión. Te asesoramos de forma cercana y lo preparamos con rapidez.</p>
+        <div class="hero-actions">
+          <a href="#reservar" class="btn btn-primary" data-i18n="hero.book">Reservar / Encargar</a>
+          <a href="https://wa.me/34615167778?text=Hola%2C%20quiero%20encargar%20unas%20flores"
+             class="btn btn-whatsapp js-wa-link" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            <span data-i18n="hero.whatsapp">Escríbenos por WhatsApp</span>
+          </a>
+        </div>
+        <!-- Aquí se mostrará el aviso "Ahora abierto / cerrado" (fase 3) -->
+        <p class="open-status" id="open-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. SERVICIOS
+         ============================================================ -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="services.eyebrow">Lo que hacemos</p>
+          <h2 data-i18n="services.title">Servicios</h2>
+          <p class="section-intro" data-i18n="services.intro">Cada encargo es único. Cuéntanos qué necesitas y te ayudamos a elegir flores, estilo y colores.</p>
+        </header>
+
+        <div class="cards">
+          <!-- Bodas y eventos (destacado) -->
+          <article class="card card-featured">
+            <div class="card-media placeholder" role="img" aria-label="Foto de decoración de boda (pendiente)">
+              <span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="srv.weddings.title">Bodas y eventos</h3>
+              <p data-i18n="srv.weddings.text">Decoración floral completa con asesoramiento personalizado de estilo y colores: ramo de novia, ceremonia, mesas y detalles.</p>
+              <!-- PENDIENTE: confirmar con la floristería — precios orientativos, si quieren mostrarlos -->
+              <a href="#reservar" class="btn btn-primary btn-sm js-preset" data-tipo="boda" data-i18n="srv.weddings.cta">Pedir presupuesto para boda</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media placeholder" role="img" aria-label="Foto de ramo de flores frescas (pendiente)">
+              <span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="srv.fresh.title">Ramos de flores frescas</h3>
+              <p data-i18n="srv.fresh.text">Ramos de temporada preparados al momento, para regalar o para ti.</p>
+              <a href="#reservar" class="link-arrow js-preset" data-tipo="ramo" data-i18n="srv.cta">Encargar</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media placeholder" role="img" aria-label="Foto de flores preservadas (pendiente)">
+              <span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="srv.preserved.title">Flores preservadas</h3>
+              <p data-i18n="srv.preserved.text">Ramos y composiciones que mantienen su belleza durante mucho tiempo, sin necesidad de agua.</p>
+              <a href="#reservar" class="link-arrow js-preset" data-tipo="preservadas" data-i18n="srv.cta">Encargar</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media placeholder" role="img" aria-label="Foto de envío de flores (pendiente)">
+              <span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="srv.delivery.title">Envíos de flores</h3>
+              <p data-i18n="srv.delivery.text">Sorprende a alguien especial. Puedes encargar desde fuera de la zona y te informamos por WhatsApp de cada paso.</p>
+              <!-- PENDIENTE: confirmar con la floristería — zona de reparto y coste del envío -->
+              <a href="#reservar" class="link-arrow js-preset" data-tipo="envio" data-i18n="srv.cta">Encargar</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media placeholder" role="img" aria-label="Foto de flores para empresas (pendiente)">
+              <span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="srv.business.title">Empresas</h3>
+              <p data-i18n="srv.business.text">Flores para oficinas, comercios, inauguraciones y regalos de empresa. Hablemos de lo que necesitas.</p>
+              <a href="#reservar" class="link-arrow js-preset" data-tipo="empresa" data-i18n="srv.cta">Encargar</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. GALERÍA DE TRABAJOS
+         Para añadir una foto:
+           1. Guarda la imagen en img/galeria/ (ej.: ramo-01.jpg, 1200 px de ancho).
+           2. Sustituye un bloque <figure class="placeholder"> por:
+              <figure class="gallery-item">
+                <img src="img/galeria/ramo-01.jpg" alt="Ramo de rosas blancas" loading="lazy">
+              </figure>
+           3. Para añadir más fotos, copia y pega otro <figure>.
+         ============================================================ -->
+    <section class="section section-alt" id="galeria">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="gallery.eyebrow">Nuestros trabajos</p>
+          <h2 data-i18n="gallery.title">Galería</h2>
+        </header>
+
+        <!-- PENDIENTE: confirmar con la floristería — fotos reales de sus trabajos -->
+        <div class="gallery">
+          <figure class="gallery-item gallery-item--tall placeholder"><span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span></figure>
+          <figure class="gallery-item placeholder"><span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span></figure>
+          <figure class="gallery-item placeholder"><span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span></figure>
+          <figure class="gallery-item gallery-item--wide placeholder"><span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span></figure>
+          <figure class="gallery-item placeholder"><span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span></figure>
+          <figure class="gallery-item gallery-item--tall placeholder"><span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span></figure>
+          <figure class="gallery-item placeholder"><span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span></figure>
+          <figure class="gallery-item placeholder"><span class="placeholder-label" data-i18n="ph.photo">Foto pendiente</span></figure>
+        </div>
+
+        <!-- PENDIENTE: confirmar con la floristería — enlace a Instagram si tienen -->
+        <p class="gallery-more"><a href="#" class="link-arrow" data-i18n="gallery.more">Ver más en Instagram</a></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. FECHAS ESPECIALES (bloque editable)
+         - Cada fecha es un <li class="date-card"> con data-month y data-day
+           (día aproximado de la fecha). La web destaca automáticamente
+           la próxima fecha que se acerca.
+         - Para una campaña concreta, cambia el texto de "campaign-note".
+         - Para ocultar una fecha, borra su <li> o añade el atributo hidden.
+         ============================================================ -->
+    <section class="section section-dates" id="fechas">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="dates.eyebrow">Reserva con tiempo</p>
+          <h2 data-i18n="dates.title">Fechas especiales</h2>
+          <p class="section-intro" data-i18n="dates.intro">En las fechas señaladas los pedidos se multiplican. Encarga con antelación y asegura tu ramo.</p>
+        </header>
+
+        <!-- Aviso de campaña activa. Edita el texto o borra el bloque si no hay campaña. -->
+        <!-- PENDIENTE: confirmar con la floristería — texto, fechas límite y precios de cada campaña -->
+        <div class="campaign-note" id="campaign-note">
+          <p><strong data-i18n="dates.next">Próxima fecha:</strong> <span id="next-date-name">—</span>.
+            <span data-i18n="dates.nextText">Ya puedes hacer tu encargo.</span></p>
+          <a href="#reservar" class="btn btn-primary btn-sm" data-i18n="dates.cta">Encargar ahora</a>
+        </div>
+
+        <ul class="dates">
+          <li class="date-card" data-month="2" data-day="14">
+            <span class="date-day" data-i18n="dates.valentine.when">14 feb</span>
+            <h3 data-i18n="dates.valentine.title">San Valentín</h3>
+            <p data-i18n="dates.valentine.text">Rosas y ramos para decir “te quiero”.</p>
+          </li>
+          <li class="date-card" data-month="4" data-day="23">
+            <span class="date-day" data-i18n="dates.santjordi.when">23 abr</span>
+            <h3 data-i18n="dates.santjordi.title">Sant Jordi</h3>
+            <p data-i18n="dates.santjordi.text">La rosa de Sant Jordi, preparada con todo el cariño.</p>
+          </li>
+          <li class="date-card" data-month="5" data-day="1">
+            <!-- En España se celebra el primer domingo de mayo -->
+            <span class="date-day" data-i18n="dates.mother.when">1.er domingo de mayo</span>
+            <h3 data-i18n="dates.mother.title">Día de la Madre</h3>
+            <p data-i18n="dates.mother.text">Un ramo para la persona que siempre está.</p>
+          </li>
+          <li class="date-card" data-month="11" data-day="1">
+            <span class="date-day" data-i18n="dates.allsaints.when">1 nov</span>
+            <h3 data-i18n="dates.allsaints.title">Todos los Santos</h3>
+            <p data-i18n="dates.allsaints.text">Centros y ramos para recordar a quienes queremos.</p>
+          </li>
+          <li class="date-card" data-month="12" data-day="25">
+            <span class="date-day" data-i18n="dates.xmas.when">Diciembre</span>
+            <h3 data-i18n="dates.xmas.title">Navidad</h3>
+            <p data-i18n="dates.xmas.text">Flor de Pascua, centros de mesa y decoración navideña.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. SOBRE NOSOTROS
+         ============================================================ -->
+    <section class="section section-alt" id="nosotros">
+      <div class="container about">
+        <!-- PENDIENTE: confirmar con la floristería — foto de la dueña o de la tienda -->
+        <div class="about-media placeholder" role="img" aria-label="Foto de la tienda (pendiente)">
+          <span class="placeholder-label" data-i18n="ph.shop">Foto de la tienda pendiente</span>
+        </div>
+        <div class="about-text">
+          <p class="eyebrow" data-i18n="about.eyebrow">Sobre nosotros</p>
+          <h2 data-i18n="about.title">Nalagreen</h2>
+          <!-- PENDIENTE: confirmar con la floristería — texto escrito por la dueña (historia, quién es, cómo trabaja) -->
+          <p class="pending-text" data-i18n="about.pending">[Texto pendiente: aquí irá la presentación escrita por la dueña de Nalagreen — cómo empezó, cómo trabaja y qué la hace diferente.]</p>
+          <ul class="values">
+            <li><span class="value-dot"></span><span data-i18n="about.v1">Trato cercano y personal</span></li>
+            <li><span class="value-dot"></span><span data-i18n="about.v2">Rapidez en cada encargo</span></li>
+            <li><span class="value-dot"></span><span data-i18n="about.v3">Asesoramiento de estilo y colores</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FORMULARIO DE RESERVAS Y ENCARGOS (se completa en la fase 2)
+         ============================================================ -->
+    <section class="section section-book" id="reservar">
+      <div class="container container-narrow">
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="book.eyebrow">Reservas y encargos</p>
+          <h2 data-i18n="book.title">Haz tu encargo</h2>
+          <p class="section-intro" data-i18n="book.intro">Rellena el formulario y te confirmaremos el pedido lo antes posible. Si lo prefieres, escríbenos por WhatsApp.</p>
+        </header>
+        <div class="form-placeholder" id="booking-form-slot">
+          <p>Formulario de reservas — se construye en la fase 2.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. CONTACTO
+         ============================================================ -->
+    <section class="section" id="contacto">
+      <div class="container contact">
+        <div class="contact-info">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Ven a vernos</p>
+          <h2 data-i18n="contact.title">Contacto</h2>
+
+          <dl class="contact-list">
+            <div>
+              <dt data-i18n="contact.address">Dirección</dt>
+              <dd>
+                <address>Av. Ribera de la Burgada, 26<br>08389 Palafolls (Barcelona)</address>
+                <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=Nalagreen%2C%20Av.%20Ribera%20de%20la%20Burgada%2C%2026%2C%2008389%20Palafolls"
+                   target="_blank" rel="noopener" data-i18n="contact.directions">Cómo llegar</a>
+              </dd>
+            </div>
+            <div>
+              <dt data-i18n="contact.phone">Teléfono y WhatsApp</dt>
+              <dd>
+                <a href="tel:+34615167778">+34 615 16 77 78</a>
+              </dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <!-- PENDIENTE: confirmar con la floristería — email de contacto -->
+              <dd class="pending-text">[email pendiente]</dd>
+            </div>
+            <div>
+              <dt data-i18n="contact.social">Redes sociales</dt>
+              <!-- PENDIENTE: confirmar con la floristería — enlaces a Instagram / Facebook -->
+              <dd class="pending-text">[Instagram / Facebook pendientes]</dd>
+            </div>
+          </dl>
+
+          <h3 class="hours-title" data-i18n="contact.hours">Horario</h3>
+          <table class="hours">
+            <tbody>
+              <tr data-days="1-6">
+                <th scope="row" data-i18n="contact.monSat">Lunes a sábado</th>
+                <td>9:30–13:30 · 17:00–20:00</td>
+              </tr>
+              <tr data-days="0">
+                <th scope="row" data-i18n="contact.sun">Domingo</th>
+                <td>9:30–13:30</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="contact-actions">
+            <a href="tel:+34615167778" class="btn btn-outline">
+              <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+              <span data-i18n="contact.call">Llamar</span>
+            </a>
+            <a href="https://wa.me/34615167778?text=Hola%2C%20quiero%20encargar%20unas%20flores"
+               class="btn btn-whatsapp js-wa-link" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Mapa de Google: no se carga hasta que la persona pulsa el botón,
+             para no enviar datos a Google sin su consentimiento (RGPD). -->
+        <div class="map" id="map">
+          <div class="map-consent">
+            <p data-i18n="contact.mapText">El mapa lo proporciona Google Maps. Al cargarlo, Google puede usar cookies.</p>
+            <button type="button" class="btn btn-outline btn-sm" id="load-map" data-i18n="contact.mapBtn">Mostrar mapa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       7. PIE DE PÁGINA
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Nalagreen</p>
+        <p data-i18n="footer.tagline">Floristería en Palafolls · Maresme</p>
+        <p>Av. Ribera de la Burgada, 26 · 08389 Palafolls<br>
+           <a href="tel:+34615167778">+34 615 16 77 78</a></p>
+      </div>
+      <nav aria-label="Enlaces legales">
+        <ul class="footer-links">
+          <li><a href="legal/aviso-legal.html" data-i18n="footer.legal">Aviso legal</a></li>
+          <li><a href="legal/privacidad.html" data-i18n="footer.privacy">Política de privacidad</a></li>
+          <li><a href="legal/cookies.html" data-i18n="footer.cookies">Política de cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Nalagreen. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       ICONOS SVG (se reutilizan con <use href="#i-...">)
+       ============================================================ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>
+    </symbol>
+  </svg>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
